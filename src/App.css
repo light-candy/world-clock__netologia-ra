@@ -1,38 +1,111 @@
-.App {
-  text-align: center;
+body {
+  padding:2em 8em 2em 8em;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+div, input {
+  box-sizing:border-box;
+}
+h4{
+  margin:0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.form {
+  display:flex;
+  flex-direction:row;
+  align-items:flex-end;
+  justify-content:center;
+}
+.form__item{
+  display:flex;
+  flex-direction:column;
+}
+.form__item:not(:last-child){
+  margin-right:24px;
+}
+input[type="text"]{
+  padding:1em;
+}
+input[type="submit"]{
+  background:#8e9aaf;
+  border:1px solid #8e9aaf;
+  border-radius:8px;
+  color:#feeafa;
+  padding:1em 2em 1em 2em;
+  
+}
+.clocks{
+  padding:24px;
+  display:flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+}
+.clock__box{
+  position:relative;
+  border-radius:8px;
+  height:300px;
+  width:300px;
+  padding:12px;
+  display:flex;
+  align-items:center;
+  flex-direction:column;
+  margin-right:12px;
+  margin-bottom:12px;
+  background:rgba(222, 226, 255, 0.2);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.clock__close{
+  position:absolute;
+  border-radius:8px;
+  top:6px;
+  right:6px;
+  height:27px;
+  width:27px;
+  background:#8e9aaf;
+  color:#fafafa;
+  border:1px solid #8e9aaf;
+  box-shadow: 0 20px 60px 0 rgba(0,0,0,.15);
+}
+.clock__face{
+  background:#8e9aaf;
+  border:10px solid #fafafa;
+  border-radius:50%;
+  width:200px;
+  height:200px;
+  box-shadow: 0 20px 60px 0 rgba(0,0,0,.15);
+  position:relative;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.clock__hour-hand{
+  border-radius:3px;
+  background:#fafafa;
+  width:8px;
+  height:60px;
+  transform-origin:bottom left;
+  transform:translate(-50%) rotate(90deg);
+  position:absolute;
+  bottom:50%;
+  left:50%;
 }
-
-.App-link {
-  color: #61dafb;
+.clock__minute-hand{
+  background:#fafafa;
+  border-radius:3px;
+  width:5px;
+  height:90px;
+  transform-origin:bottom left;
+  transform:translate(-50%);
+  position:absolute;
+  bottom:50%;
+  left:50%;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.clock__second-hand{
+  background:black;
+  width:1px;
+  height:90px;
+  transform-origin:bottom left;
+  transform:translate(-50%) rotate(45deg);
+  position:absolute;
+  bottom:50%;
+  left:50%;
 }
